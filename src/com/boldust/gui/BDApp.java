@@ -1,17 +1,19 @@
 package com.boldust.gui;
 
+import javax.swing.SwingUtilities;
+
 public class BDApp {
-  private transaction tran;
-  private session sess;
+  private Transaction transaction;
+  private Session session;
   public static void main() {
-    SwingUtilities.InvokeLater( new Runnable() {
+    SwingUtilities.invokeLater( new Runnable() {
          public void run() {
             createAndShowGUI();
          }
       }
     );
   }
-  private createAndShowGUI() {
+  private static void createAndShowGUI() {
       
   }
 }
