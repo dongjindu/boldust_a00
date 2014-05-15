@@ -4,6 +4,8 @@
  */
 package com.geovince.test;
 
+import com.boldust.gui.Res;
+import com.boldust.gui.DAO;
 import com.boldust.gui.GBConstraints;
 import java.awt.*;
 import java.awt.Component;

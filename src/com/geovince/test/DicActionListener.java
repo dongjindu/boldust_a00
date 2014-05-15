@@ -4,6 +4,9 @@
  */
 package com.geovince.test;
 
+import com.boldust.gui.Res;
+import com.boldust.gui.DAO;
+import com.boldust.gui.DAOException;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

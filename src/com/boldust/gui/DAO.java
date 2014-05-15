@@ -4,8 +4,9 @@
  * This software piece is apache license. But the contents generated is governed by wiktionary.org policy.
  */
 
-package com.geovince.test;
+package com.boldust.gui;
 
+import com.boldust.gui.DAOException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.rmi.server.UID;

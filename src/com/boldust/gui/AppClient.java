@@ -2,7 +2,7 @@ package com.boldust.gui;
 
 import javax.swing.SwingUtilities;
 
-public class BDApp {
+public class AppClient {
   private Transaction transaction;
   private Session session;
   public static void main() {

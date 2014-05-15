@@ -4,8 +4,6 @@
  */
 package com.boldust.gui;
 
-import com.geovince.test.DAO;
-import com.geovince.test.DAOException;
 import java.awt.Color;
 import java.awt.Component;
 import java.sql.ResultSet;
