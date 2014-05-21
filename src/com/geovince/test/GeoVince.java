@@ -8,6 +8,7 @@ package com.geovince.test;
  *
  * @author oefish
  */
+import com.boldust.math001.Math001;
 import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -15,7 +16,6 @@ import javax.swing.WindowConstants;
 //import java.awt.EventQueue;
 
 public class GeoVince {
-
     /**
      * @param args the command line arguments
      */
@@ -34,6 +34,15 @@ public class GeoVince {
         }
     }
     private static void createAndShowGUI() {
+      int i1 = 2;
+      Object o1 = (Integer) i1;
+      int i2 = 1;
+      Object o2 = (Integer) i2;
+      Object o3;
+      o3 = (Integer) o1 + (Integer) o2;
+      System.out.println("I " + "Printed here:" + o3.toString());
+      System.out.println(Math001.pow001(-2, 20).toString());
+      System.exit(0);
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         MWindow m = new MWindow();

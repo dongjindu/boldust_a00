@@ -14,6 +14,5 @@ public class AppClient {
     );
   }
   private static void createAndShowGUI() {
-      
   }
 }

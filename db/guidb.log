@@ -1,0 +1,2 @@
+/*C4*/SET SCHEMA PUBLIC
+create cached table a(a int primary key)
