@@ -21,8 +21,14 @@ public class Field {
     public static final int TYPE_FLOAT = 5;
     public static final int TYPE_DOUBLE = 6;
     public static final int TYPE_BIGDECIMAL = 7;
-    public static final int TYPE_PACK = 8;
-                
+    public static final int TYPE_BLOB = 8;
+    public static final int TYPE_URL = 9;
+    public static final int TYPE_FILENAME = 10;
+    public static final int TYPE_HOSTNAME = 11;
+    public static final int TYPE_IPV4 = 12;
+    public static final int TYPE_IPV6 = 13;
+    public static final int TYPE_PACK = 14;
+                    
     public String name = "";
     public int ftype = TYPE_INT;
     public int length = 0;
