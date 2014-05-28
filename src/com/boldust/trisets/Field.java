@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.boldust.db;
+package com.boldust.trisets;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,12 +22,7 @@ public class Field {
     public static final int TYPE_DOUBLE = 6;
     public static final int TYPE_BIGDECIMAL = 7;
     public static final int TYPE_BLOB = 8;
-    public static final int TYPE_URL = 9;
-    public static final int TYPE_FILENAME = 10;
-    public static final int TYPE_HOSTNAME = 11;
-    public static final int TYPE_IPV4 = 12;
-    public static final int TYPE_IPV6 = 13;
-    public static final int TYPE_PACK = 14;
+    public static final int TYPE_PACK = 9;
                     
     public String name = "";
     public int ftype = TYPE_INT;
@@ -35,7 +30,14 @@ public class Field {
     public int decimal = 0;
     public short displaylength = 0;
     public short displaydecimal = 0;
+    public Field(String fieldname) {
+        
+    }
+    public Field(String tablename, String fieldname) {
+        
+    }
     public Field(int fieldtype, int length, int decimal) { //Shall be pack
+
         if (fieldtype == TYPE_PACK ) {
             ftype = fieldtype;
         } else{
