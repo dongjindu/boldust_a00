@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class Fields {
     private boolean initiated = false;
-    private ArrayList<Field> fields = new ArrayList<> ();
+    private ArrayList<Object> fields = new ArrayList<> ();
     public Fields(String[] fieldnames) {
         for (int i = 0; i < fieldnames.length; i++ )  {
             fields.add(new Field(fieldnames[i]));
@@ -46,5 +46,10 @@ public class Fields {
     }
     public Fields(String tablename) throws Exception {
         //Initiate by table name
+    }
+    
+    public void AddChildFields(Fields fs, int relationship) {
+        this.fields.add(fs);
+        this.fields.add(Integer.valueOf(relationship));
     }
 }

@@ -13,5 +13,5 @@ import java.util.ArrayList;
  * @author oefish
  */
 public class RowValues {
-    private ArrayList<FieldValues> fv = new ArrayList<>();
+    private ArrayList<FieldValues> rvs = new ArrayList<>();
 }

@@ -12,10 +12,10 @@ import com.boldust.general.Tree;
  *
  * @author oefish
  */
-public class TriSets{
-    private Tree<Fields> fieldtrees;
-
-    public TriSets() throws Exception {
-        this.fieldtrees = new Tree<Fields>(new Fields(""));
+public class TriSet{
+    public Fields fs;
+    public RowValues rvs;
+    
+    public TriSet() throws Exception {
     }
 }
