@@ -4,9 +4,9 @@
  */
 package com.geovince.test;
 
-import com.boldust.gui.Res;
-import com.boldust.gui.DAO;
-import com.boldust.gui.DAOException;
+import com.boldust.general.Res;
+import com.boldust.general.LocalDAO;
+import com.boldust.general.LocalDAOException;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +32,7 @@ public class DicActionListener implements ActionListener {
     private int[] m;
     private int[] p;
     private ResultSet rs;
-    private static DAO dao = new DAO();
+    private static LocalDAO dao = new LocalDAO();
     private boolean b9 = false;
     private final static int NUMBER_OF_TASKS = 10;
 
@@ -64,23 +64,23 @@ public class DicActionListener implements ActionListener {
             try {
                 int idao = dao.update("shutdown");
                 dao.executeUpdate(idao);
-            } catch (DAOException ex) {
+            } catch (LocalDAOException ex) {
                 Logger.getLogger(DicActionListener.class.getName()).log(Level.SEVERE, null, ex);
             }
-            DAO.closeConnection();
+            LocalDAO.closeConnection();
             System.exit(0);
         } else if (ae.getActionCommand().equals("Save and Exit")) {
             saveprop(ae);
             createDir();
-            DAO dao = new DAO();
+            LocalDAO dao = new LocalDAO();
             try {
                 int idao = dao.update("shutdown");
                 dao.executeUpdate(idao);
-            } catch (DAOException ex) {
+            } catch (LocalDAOException ex) {
                 Logger.getLogger(DicActionListener.class.getName()).log(Level.SEVERE, null, ex);
                 System.exit(0);
             }
-            DAO.closeConnection();
+            LocalDAO.closeConnection();
             System.exit(0);
         } else if (ae.getActionCommand().equals("Run")) {
             createDir();
@@ -194,7 +194,7 @@ public class DicActionListener implements ActionListener {
 
                 } catch (SQLException ex) {
                     Logger.getLogger(DicActionListener.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (DAOException daoe) {
+                } catch (LocalDAOException daoe) {
                     Logger.getLogger(DicActionListener.class.getName()).log(Level.SEVERE, null, daoe);
                 }
             }
@@ -312,7 +312,7 @@ public class DicActionListener implements ActionListener {
             if (!rs.next()) {
                 createdb();
             }
-        } catch (DAOException daoe) {
+        } catch (LocalDAOException daoe) {
             System.err.print("\nException of no vocabulary table caught!");
 //            daoe.printStackTrace();
             createdb();
@@ -503,7 +503,7 @@ public class DicActionListener implements ActionListener {
             dao.executeUpdate(idao37);
             int idao38 = dao.update("checkpoint");
             dao.executeUpdate(idao38);
-        } catch (DAOException daoe) {
+        } catch (LocalDAOException daoe) {
             daoe.printStackTrace();
         }
     }
@@ -529,7 +529,7 @@ public class DicActionListener implements ActionListener {
 
     private void genDict() {
         try {
-            DAO dao = new DAO();
+            LocalDAO dao = new LocalDAO();
             ResultSet rs, rs1;
             int max0 = Integer.parseInt(((JTextField) hm.get("maxlength")).getText());
             int i = 0, j = 0;

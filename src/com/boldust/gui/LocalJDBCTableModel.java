@@ -4,6 +4,8 @@
  */
 package com.boldust.gui;
 
+import com.boldust.general.LocalDAOException;
+import com.boldust.general.LocalDAO;
 import java.awt.Color;
 import java.awt.Component;
 import java.sql.ResultSet;
@@ -29,7 +31,7 @@ public class LocalJDBCTableModel extends AbstractTableModel{ //Actually this is 
   private int rowcount;
   private boolean rowcounted = false;
   private boolean loaded = false;
-  private DAO dao = new DAO();
+  private LocalDAO dao = new LocalDAO();
   private String sql0;
   private String sql1; //SQL counting
   
@@ -58,8 +60,8 @@ public class LocalJDBCTableModel extends AbstractTableModel{ //Actually this is 
          rs = dao.executeQuery(idao);
          rsmd = rs.getMetaData();
          loaded = true;
-//      } catch (DAOException de) {
-      } catch (DAOException ex) {
+//      } catch (LocalDAOException de) {
+      } catch (LocalDAOException ex) {
           ex.printStackTrace();
           System.exit(-1);
       } catch (SQLException se) {

@@ -4,8 +4,8 @@
  */
 package com.geovince.test;
 
-import com.boldust.gui.Res;
-import com.boldust.gui.DAO;
+import com.boldust.general.Res;
+import com.boldust.general.LocalDAO;
 import com.boldust.gui.GBConstraints;
 import java.awt.*;
 import java.awt.Component;
@@ -35,7 +35,7 @@ import javax.swing.ScrollPaneLayout;
 import javax.swing.ScrollPaneConstants;
 
 public class MWindow {
-    private DAO dao = new DAO();
+    private LocalDAO dao = new LocalDAO();
     private ResultSet rs;
     private HashMap<String, Object> hm = new HashMap();
     

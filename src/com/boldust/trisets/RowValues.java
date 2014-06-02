@@ -6,6 +6,7 @@
 
 package com.boldust.trisets;
 
+import com.boldust.general.Prop;
 import java.util.ArrayList;
 
 /**
@@ -13,5 +14,11 @@ import java.util.ArrayList;
  * @author oefish
  */
 public class RowValues {
-    private ArrayList<FieldValues> rvs = new ArrayList<>();
+    public ArrayList<FieldValues> rvs = new ArrayList<>();
+    private Fields flds = null;
+    public Prop buffersize = null;
+    
+    public void load(String selectstring) {
+        rvs.get(0).setRowValues(this);
+    }
 }

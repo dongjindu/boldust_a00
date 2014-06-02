@@ -13,11 +13,20 @@ import java.util.ArrayList;
  * @author oefish
  */
 public class FieldValues {
+    private RowValues rvs = null;
+    private Fields flds = null;
+    
     private ArrayList<Object> fvs = new ArrayList<>();
     public void setFieldValues(ArrayList<Object> al) {
         this.fvs = al;
     }
     public ArrayList<Object> getFieldValues() {
         return this.fvs;
+    }
+    public void setRowValues(RowValues rvs) {
+        this.rvs = rvs;
+    }
+    public RowValues getRowValues() {
+        return this.rvs;
     }
 }
