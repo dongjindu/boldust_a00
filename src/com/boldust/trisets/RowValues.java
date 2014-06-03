@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class RowValues {
     public ArrayList<FieldValues> rvs = new ArrayList<>();
     private Fields flds = null;
-    public Prop buffersize = null;
+    public Integer buffersize = null;
     
     public void load(String selectstring) {
         rvs.get(0).setRowValues(this);
