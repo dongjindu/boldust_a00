@@ -23,10 +23,12 @@ public class TriSet {
     public static ComboPooledDataSource cpds = new ComboPooledDataSource();
     public static ComboPooledDataSource cpdsmeta = new ComboPooledDataSource();
     private static Boolean ifDataSourceSet = false;
+    private static Boolean ifMetaDataSourceSet = false;
     private static String DSname = null;
 
     static {
         setDataSource(Res.DATASOURCENAME);
+        setMetaDataSource(Res.DATASOURCENAME);
     }
     
     public TriSet() throws Exception {
@@ -56,18 +58,6 @@ public class TriSet {
                 cpds.setPassword((String) p.getProp(spass));
                 cpds.setMinPoolSize((Integer) p.getProp(sminps));
                 cpds.setMaxPoolSize((Integer) p.getProp(smaxps));
-                sdc = "cpds." + name + "meta.driverclass" ;
-                sju = "cpds." + name + "meta.url";
-                suser = "cpds." + name + "meta.user";
-                spass = "cpds." + name + "meta.password";
-                sminps = "cpds." + name + "meta.minpoolsize";
-                smaxps = "cpds." + name + "meta.maxpoosize";
-                cpdsmeta.setDriverClass((String) p.getProp(sdc));
-                cpdsmeta.setJdbcUrl((String)p.getProp(sju)); //Can set to "localhost jarpath"
-                cpdsmeta.setUser((String) p.getProp(suser));
-                cpdsmeta.setPassword((String) p.getProp(spass));
-                cpdsmeta.setMinPoolSize((Integer) p.getProp(sminps));
-                cpdsmeta.setMaxPoolSize((Integer) p.getProp(smaxps));
                 ifDataSourceSet = true;
             } catch (Exception e) {
                 Res.logger.log(Level.SEVERE, TriSet.class.getName());
@@ -75,6 +65,38 @@ public class TriSet {
             }
         }
         return ifDataSourceSet;
+    }
+    /**
+     * If DataSource set successfully or set already, return true. Otherwise
+     * return false.
+     *
+     * @param name
+     * @return
+     */
+    public static boolean setMetaDataSource(String name) {
+        if (!ifMetaDataSourceSet) {
+            try {
+                TriSet.DSname = name.toLowerCase();
+                BoldustProperties p = new BoldustProperties();
+                String sdc = "cpds." + name + "meta.driverclass" ;
+                String sju = "cpds." + name + "meta.url";
+                String suser = "cpds." + name + "meta.user";
+                String spass = "cpds." + name + "meta.password";
+                String sminps = "cpds." + name + "meta.minpoolsize";
+                String smaxps = "cpds." + name + "meta.maxpoosize";
+                cpdsmeta.setDriverClass((String) p.getProp(sdc));
+                cpdsmeta.setJdbcUrl((String)p.getProp(sju)); //Can set to "localhost jarpath"
+                cpdsmeta.setUser((String) p.getProp(suser));
+                cpdsmeta.setPassword((String) p.getProp(spass));
+                cpdsmeta.setMinPoolSize((Integer) p.getProp(sminps));
+                cpdsmeta.setMaxPoolSize((Integer) p.getProp(smaxps));
+                ifMetaDataSourceSet = true;
+            } catch (Exception e) {
+                Res.logger.log(Level.SEVERE, TriSet.class.getName());
+                return false;
+            }
+        }
+        return ifMetaDataSourceSet;
     }
     public static Boolean ifDataSourceSet() {
         return ifDataSourceSet;

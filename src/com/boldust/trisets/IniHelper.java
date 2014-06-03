@@ -19,7 +19,6 @@ public class IniHelper {
     public static void iniMetaDB() {
         try {
             TriSet triset = new TriSet();
-            triset.cpdsmeta.setJdbcUrl((String) new BoldustProperties().getProp("cpds.hsqldb001.url"));
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists fields(field char(30)," + 
                     " type char(10), length int, precision int, scale int, primary key(field))").execute();
         } catch (Exception e) {
