@@ -37,14 +37,29 @@ public class TriSetTest {
     @Before
     public void setUp() {
         try {
+            
             triset = new TriSet();
             BoldustProperties p = new BoldustProperties();
-            triset.cpds.setDriverClass((String) p.getProp("cpds.hsqldb001.DriverClass"));
-            triset.cpds.setJdbcUrl((String) p.getProp("cpds.hsqldb001.url")); //Can set to "localhost jarpath"
-            triset.cpds.setUser((String) p.getProp("cpds.hsqldb001.user"));
-            triset.cpds.setPassword((String) p.getProp("cpds.hsqldb001.password"));
-            triset.cpds.setMinPoolSize((Integer) p.getProp("cpds.hsqldb001.minpoolsize"));
-            triset.cpds.setMaxPoolSize((Integer) p.getProp("cpds.hsqldb001.maxpoolsize"));
+//            p.setProp("cpds." + Res.DATASOURCENAME + ".name", Res.DATASOURCENAME, "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".driverclass", "org.hsqldb.jdbcDriver", "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".url", "jdbc:hsqldb:file:c:\\temp\\trisets\\test", "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".user", Res.DATASOURCENAME, "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".password", Res.DATASOURCENAME, "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".minpoolsize", 1, "int");
+            p.setProp("cpds." + Res.DATASOURCENAME + ".maxpoolsize", 1, "int");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.driverclass", "org.hsqldb.jdbcDriver", "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.url", "jdbc:hsqldb:file:c:\\temp\\trisets\\testmeta", "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.user", Res.DATASOURCENAME, "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.password", Res.DATASOURCENAME, "String");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.minpoolsize", 1, "int");
+            p.setProp("cpds." + Res.DATASOURCENAME + "meta.maxpoolsize", 1, "int");
+
+            triset.cpds.setDriverClass((String) p.getProp("cpds." + Res.DATASOURCENAME + ".driverclass"));
+            triset.cpds.setJdbcUrl((String) p.getProp("cpds." + Res.DATASOURCENAME + ".url")); //Can set to "localhost jarpath"
+            triset.cpds.setUser((String) p.getProp("cpds." + Res.DATASOURCENAME + ".user"));
+            triset.cpds.setPassword((String) p.getProp("cpds." + Res.DATASOURCENAME + ".password"));
+            triset.cpds.setMinPoolSize((Integer) p.getProp("cpds." + Res.DATASOURCENAME + ".minpoolsize"));
+            triset.cpds.setMaxPoolSize((Integer) p.getProp("cpds." + Res.DATASOURCENAME + "maxpoolsize"));
             
             triset.cpdsmeta.setDriverClass((String) p.getProp("cpds.hsqldb001meta.DriverClass"));
             triset.cpdsmeta.setJdbcUrl((String) p.getProp("cpds.hsqldb001meta.url")); //Can set to "localhost jarpath"

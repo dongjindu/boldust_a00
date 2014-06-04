@@ -19,6 +19,12 @@ public class IniHelper {
     public static void iniMetaDB() {
         try {
             TriSet triset = new TriSet();
+            triset.cpdsmeta.getConnection().prepareStatement("create table if exists rawtypes(driver char(30)," + 
+                    " version char(10), rawtype char(10), javatype char(10), javavertion"
+                    + "length boolean, precision boolean, scale boolean, "
+                    + "length0 int, precision0 int, scale 0, "
+                    + "primary key(driver, version, rawtype, javatype, javaversion"
+                    + "))").execute();
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists fields(field char(30)," + 
                     " type char(10), length int, precision int, scale int, primary key(field))").execute();
         } catch (Exception e) {
