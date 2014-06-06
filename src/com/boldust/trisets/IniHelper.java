@@ -19,17 +19,19 @@ public class IniHelper {
     public static void iniMetaDB() {
         try {
             TriSet triset = new TriSet();
-			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dicttypes(dicttype char(30), dictstatus char(1), "
-			 + "dictvers char(20), javaclass char(20), javaver char(20), "
+			triset.cpdsmeta.getConnection().prepareStatement("create table if exists ddtypes(ddtype char(30), ddstatus char(1), "
+			 + "ddvers char(20), javaclass char(20), javaver char(20), "
 			 + "length int, precision int, scale int, outputlength int, "
 			 + "primary key(dicttype, dictstatus, dictvers)").execute();
-			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dbtypes(dicttype char(30), dictvers char(20)," 
-			 + "driver char(30), dbtype char(20), dbversion char(20), primary key(dicttype, dictvers, driver, dbtype, dbversion)) ").execute();
-			triset.cpdsmeta.getConnection().prepareStatement("create table if exists diceles(dictele char(30), dicttype char(30)," 
-			 + "stext char(15), ltext char(15), primary key (dictele))").execute;
-			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dictsqls(name char(10)" 
-			 + "sqlstring char(500), tablename char(30) ").execute;
-			
+			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dbtypes(ddtype char(30), ddvers char(20)," 
+			 + "driver char(30), dbtype char(20), dbversion char(20), primary key(ddtype, ddvers, driver, dbtype, dbversion)) ").execute();
+			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dicteles(dictele char(30), dicttype char(30)," 
+			 + "stext char(15), ltext char(15), primary key (dictele))").execute();
+			triset.cpdsmeta.getConnection().prepareStatement("create table if exists dictsqls(sqlname char(20)" 
+			 + "sqlstring char(500)").execute();
+			triset.cpdsmeta.getConnection().prepareStatement("create table if exists sqlfields(sqlname char(20)" 
+			 + "field ").execute();
+
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists dicteles(driver char(30)," + 
                     " version char(10), rawtype char(10), javatype char(10), javaversion"
                     + "length boolean, precision boolean, scale boolean, "
@@ -42,7 +44,7 @@ public class IniHelper {
                     + "length0 int, precision0 int, scale 0, "
                     + "primary key(driver, version, rawtype, javatype, javaversion"
                     + "))").execute();
-					
+
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists fields(field char(30)," + 
                     " type char(10), length int, precision int, scale int, primary key(field))").execute();
         } catch (Exception e) {
