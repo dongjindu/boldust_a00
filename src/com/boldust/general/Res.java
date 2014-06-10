@@ -28,6 +28,11 @@ import org.xml.sax.*;
 
 public class Res {
  //   private static String PROPERTYFILE="config.properties";
+    public final static byte BYTEFALSE = 0;
+    public final static byte BYTETRUE = 1; //Field Override dataele
+    public final static byte BYTEEITHER2 = 12; //Greater than 12 meaing either for each group.
+    public final static byte BYTEEITHER3 = 13; //Greater than 12 meaing either for each group.
+    public final static String PROPERTYCLASS = "PropertiesDB";
     public final static String DRIVER_NAME = "org.hsqldb.jdbcDriver";
     public static String IPADDRESS = "localhost";
     public static String PORT = "3306";
