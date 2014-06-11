@@ -28,10 +28,12 @@ import org.xml.sax.*;
 
 public class Res {
  //   private static String PROPERTYFILE="config.properties";
-    public final static byte BYTEFALSE = 0;
-    public final static byte BYTETRUE = 1; //Field Override dataele
-    public final static byte BYTEEITHER2 = 12; //Greater than 12 meaing either for each group.
-    public final static byte BYTEEITHER3 = 13; //Greater than 12 meaing either for each group.
+    public final static byte BYTE_FALSE = 0;
+    public final static byte BYTE_TRUE = 1; //Field Override dataele
+    public final static byte BYTE_EITHER_2 = 12; //Greater than 12 meaing either for each group.
+    public final static byte BYTE_EITHER_3 = 13; //Greater than 12 meaing either for each group.
+    public final static byte SQLTYPE_TABLE = 1;
+    public final static byte SQLTYPE_SQL = 2;
     public final static String PROPERTYCLASS = "PropertiesDB";
     public final static String HSQL_DRIVER_NAME = "org.hsqldb.jdbcDriver";
     public static String IPADDRESS = "localhost";

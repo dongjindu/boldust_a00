@@ -37,7 +37,7 @@ public class IniHelper {
                     + "javaclass char(20), javaver char(20),"
                     + "primary key (ddele))").execute();
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists ddsqls(sqlname char(20)"
-                    + "sqlstring char(500), primary key (sqlname))").execute();
+                    + "sqlstring char(500), sqltype int, primary key (sqlname))").execute();
             triset.cpdsmeta.getConnection().prepareStatement("create table if exists ddsqlfields(sqlname char(20),"
                     + "field char(30), ddele char(30), reffeild varchar(30), primary key (sqlname, field))").execute();
             PreparedStatement ps = triset.cpdsmeta.getConnection().prepareStatement("insert into ddtypes"
@@ -236,10 +236,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTETRUE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_TRUE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Long"); //Will use varchar as storage UTF-8
@@ -251,10 +251,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 12);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Integer"); //Will use varchar as storage UTF-8
@@ -266,10 +266,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 12);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Short"); //Will use varchar as storage UTF-8
@@ -281,10 +281,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 12);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Boolean"); //Will use varchar as storage UTF-8
@@ -296,10 +296,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 12);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "BigDecimal"); //Will use varchar as storage UTF-8
@@ -311,10 +311,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEEITHER2);
-            ps.setInt(12, Res.BYTEEITHER2);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_EITHER_2);
+            ps.setInt(12, Res.BYTE_EITHER_2);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
 
@@ -327,10 +327,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 16);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             
@@ -343,10 +343,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 15);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "QuanBigDecimal"); //Will use varchar as storage UTF-8
@@ -358,10 +358,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEEITHER2);
-            ps.setInt(12, Res.BYTEEITHER2);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_EITHER_2);
+            ps.setInt(12, Res.BYTE_EITHER_2);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "AmtBigDecimal"); //Will use varchar as storage UTF-8
@@ -373,10 +373,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEEITHER2);
-            ps.setInt(12, Res.BYTEEITHER2);
-            ps.setInt(13, Res.BYTETRUE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_EITHER_2);
+            ps.setInt(12, Res.BYTE_EITHER_2);
+            ps.setInt(13, Res.BYTE_TRUE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "UnitKey"); //Will use varchar as storage UTF-8
@@ -388,10 +388,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 5);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "CurrKey"); //Will use varchar as storage UTF-8
@@ -403,10 +403,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 5);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "TimeStamp"); //Will use varchar as storage UTF-8
@@ -418,10 +418,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 22);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Date"); //Will use varchar as storage UTF-8
@@ -433,10 +433,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 10);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
                             //could be variable for this one. Meaning output customized implementation could set it extra
             ps.addBatch();
             ps.setString(1, "Time"); //Will use varchar as storage UTF-8
@@ -448,10 +448,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 11);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
             ps.addBatch();
             ps.setString(1, "UTCTime"); //Will use varchar as storage UTF-8
             ps.setString(2, "X"); //ddstatus, X means active
@@ -462,10 +462,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 15);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
             ps.addBatch();
             ps.setString(1, "RAW"); //Will use varchar as storage UTF-8
             ps.setString(2, "X"); //ddstatus, X means active
@@ -476,10 +476,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
             ps.addBatch();
             ps.setString(1, "Object"); //Will use varchar as storage UTF-8
             ps.setString(2, "X"); //ddstatus, X means active
@@ -490,10 +490,10 @@ Object: Serialization of serializable java object
             ps.setInt(7, 0); //Precision is the signifcant numbers. Either precision or Scale can be set but not both.
             ps.setInt(8, 0); //Scale is the number of digits to the right of decimal point
             ps.setInt(9, 20);//Output length, Default on ddtype level
-            ps.setInt(10, Res.BYTEFALSE);
-            ps.setInt(11, Res.BYTEFALSE);
-            ps.setInt(12, Res.BYTEFALSE);
-            ps.setInt(13, Res.BYTEFALSE);
+            ps.setInt(10, Res.BYTE_FALSE);
+            ps.setInt(11, Res.BYTE_FALSE);
+            ps.setInt(12, Res.BYTE_FALSE);
+            ps.setInt(13, Res.BYTE_FALSE);
             ps.addBatch();
             ps.execute();
 
