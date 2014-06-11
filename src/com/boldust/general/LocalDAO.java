@@ -192,7 +192,7 @@ public class LocalDAO {
     public static void createConnection(){
          try {
             if (conn == null) {
-                Class.forName(Res.DRIVER_NAME);
+                Class.forName(Res.HSQL_DRIVER_NAME);
 //                conn = DriverManager.getConnection(Res.DATABASE_ADDRESS + ";shutdown=true", Res.getProp().getString("dbusername"), Res.getProp().getString("dbpassword"));
                 conn = DriverManager.getConnection(Res.DATABASE_ADDRESS + ";shutdown=true", Res.PROPDBUSER, Res.PROPDBPASS);  
             }

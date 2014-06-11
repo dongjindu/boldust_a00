@@ -33,7 +33,7 @@ public class Res {
     public final static byte BYTEEITHER2 = 12; //Greater than 12 meaing either for each group.
     public final static byte BYTEEITHER3 = 13; //Greater than 12 meaing either for each group.
     public final static String PROPERTYCLASS = "PropertiesDB";
-    public final static String DRIVER_NAME = "org.hsqldb.jdbcDriver";
+    public final static String HSQL_DRIVER_NAME = "org.hsqldb.jdbcDriver";
     public static String IPADDRESS = "localhost";
     public static String PORT = "3306";
     public static String DBNAME = "boldust";
