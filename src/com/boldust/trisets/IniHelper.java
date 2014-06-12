@@ -51,6 +51,11 @@ public class IniHelper {
                             + "(ddtype, ddver, dbdriver, dbtype, dbver, dbdefault) "
                             + "values (?, ?, ?,    ?, ?, ?)");
             setdbtype(ps1);
+            PreparedStatement ps2 = triset.cpdsmeta.getConnection().prepareStatement("insert into ddeles"
+                    + "(ddele, ddtype, length, precision, scale, outputlength,"
+                    + "ddver, stext, ltext, javaclass, javaever)"
+                    + "select ");
+            //setddeles(ps2);
             triset.cpdsmeta.getConnection().prepareStatement("");
             triset.cpdsmeta.getConnection().prepareStatement("");
         } catch (Exception e) {
